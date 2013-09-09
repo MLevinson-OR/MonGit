@@ -23,8 +23,8 @@ client_secret: your_apps_client_secret
 auth = YAML.load_file File.dirname(__FILE__) + '/gitauth.yml'
 
 client = Octokit::Client.new \
-  :client_id     => "<your 20 char id>",
-  :client_secret => "<your 40 char secret>"
+  :client_id     => auth['client_id'],
+  :client_secret => auth['clent_secret']
 
-user = client.user 'put_your_username_here_to_test'
+user = client.user 'mlevinson-or'
 pp user 
